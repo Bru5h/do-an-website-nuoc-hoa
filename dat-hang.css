@@ -1,0 +1,268 @@
+body {
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+label1{
+    font-size: 27px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(198, 198, 198, 0.8);
+}
+
+main {
+    padding: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    flex: 1;
+}
+
+.container {
+    width: 90%;
+
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-button, .confirm, .remove-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-details {
+    margin: 20px 0;
+
+}
+
+.product-item {
+    display: flex;
+    align-items: stretch;
+    padding-top: 30px;
+    padding-bottom: 35px;
+    padding-left: 15px;
+    padding-right: 10px;
+    transition: background-color 0.3s;
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.product-image {
+    width: 200px;
+    margin-right: 15px;
+    border-radius: 5px;
+    
+}
+
+.product-info {
+    width: 73%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.order-item-title {
+    width: 30%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+.order-item-price {
+    font-size: 20px;
+}
+.quantity-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-group {
+    margin: 20px 0;
+}
+
+label {
+    display:inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.customer-infor {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.customer-infor:focus {
+    border-color: #878787;
+    outline: none;
+}
+
+.confirm {
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    float: right;
+}
+
+.confirm:hover {
+    background-color: #005bb5;
+}
+
+.rem-btn{
+    position: absolute;  /* Định vị nút xóa tuyệt đối */
+    top: 50%;  /* Đặt nút xóa ở giữa chiều dọc */
+    right: 10px;  /* Đặt nút xóa cách bên phải 10px */
+    transform: translateY(-50%); 
+}
+.remove-btn {
+    background-color: #cb0d20;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 100px;
+    width: 30px; 
+}   
+
+.remove-btn:hover {
+    background-color: #a90b1b; 
+}
+
+.remove-btn i {
+    font-size: 16px;
+    margin: 0;
+}
+
+.divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 20px 0; 
+}
+
+rl{
+    color: red;
+}
+
+label2{
+    font-size: 18px;
+}
+.total{
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 150px;
+    margin-right: 80px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.price{
+    margin-top: 40px;
+    margin-left: 150px;
+    margin-right: 80px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.ship{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 80px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+/* CSS cho phần phương thức thanh toán */
+.payment-methods {
+    margin-bottom: 20px;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+    background-color: #f8f8f8;
+    border-color: #ccc;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 5px;
+}
+
+.payment-icon {
+    height: 30px;
+    margin-left: 10px;
+}
+
+/* Khi phương thức được chọn */
+.payment-option input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #000;
+}
+
+.payment-option:has(input[type="radio"]:checked) {
+    border-color: #007bff;
+    background-color: #f0f7ff;
+}

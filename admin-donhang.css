@@ -1,0 +1,151 @@
+.prob{
+    margin-top: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.bg-green-500 {
+    background-color: #48bb78;
+    color: white;
+}
+
+.bg-blue-500 {
+    background-color: #4299e1;
+    color: white;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.prob label {
+    font-weight: 500;
+    color: #333;
+    display: block;
+}
+ul{
+    padding-right: 25px;
+}
+/* Modal */
+#orderDetailModal {
+    display: none; /* Modal ẩn mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Nền tối mờ */
+    z-index: 9999; /* Đảm bảo modal luôn nổi trên các phần tử khác */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#orderDetailModal .bg-white {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#orderDetailModal .prob {
+    margin-bottom: 1rem;
+}
+
+#orderDetailModal label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#orderDetailModal input,
+#orderDetailModal textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+#orderDetailModal input[readonly],
+#orderDetailModal textarea[readonly] {
+    background-color: #f9f9f9;
+    cursor: not-allowed;
+}
+
+#orderDetailModal textarea {
+    resize: vertical;
+}
+
+#orderDetailModal button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#orderDetailModal button:hover {
+    background-color: #2980b9;
+}
+
+#orderDetailModal .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#orderDetailModal .flex button {
+    background-color: #e74c3c;
+}
+
+#orderDetailModal .flex button:hover {
+    background-color: #c0392b;
+}
+
+#orderDetailModal .text-right {
+    text-align: right;
+}
+
+#orderDetailModal .text-right button {
+    background-color: #2ecc71;
+}
+
+#orderDetailModal .text-right button:hover {
+    background-color: #27ae60;
+}
+
+@media (max-width: 768px) {
+    #orderDetailModal .bg-white {
+        width: 100%; /* Chiều rộng full cho màn hình nhỏ */
+        padding: 15px;
+    }
+}

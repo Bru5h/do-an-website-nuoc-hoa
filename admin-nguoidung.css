@@ -1,0 +1,99 @@
+.prob{
+    margin-top: 20px;
+}
+/* CSS cho Modal Chi Tiết */
+#editModal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* Nền mờ */
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+/* Modal nội dung */
+.modal-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 50%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Tiêu đề Modal */
+#modalTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Style cho mỗi ô input */
+input, select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.bg-green-500 {
+    background-color: #48bb78;
+    color: white;
+}
+
+.bg-blue-500 {
+    background-color: #4299e1;
+    color: white;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.prob label {
+    font-weight: 500;
+    color: #333;
+    display: block;
+}
+
+/* Đóng Modal */
+#editModal.hidden {
+    display: none;
+}
+
+/* Style cho background và các hiệu ứng khi mở modal */
+#editModal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Cải thiện hiệu ứng đóng modal */
+#editModal .modal-content {
+    transform: scale(1);
+}
+
+#editModal.hidden .modal-content {
+    transform: scale(0);
+}
+ul{
+    padding-right: 25px;
+}

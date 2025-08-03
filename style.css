@@ -1,0 +1,395 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(198, 198, 198, 0.8);
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-item h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+.product-item p {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.add-to-cart {
+    background-color: #be005f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto;
+}
+
+.add-to-cart:hover {
+    background-color: #ab0d5c;
+}
+
+.price-stock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0; 
+}
+
+.price-stock p {
+    margin: 0;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.price-stock .stock {
+    color: #555; 
+    margin-left: 10px;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.banner-image {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    display: none;
+}
+
+.banner-image.active {
+    display: block;
+}
+
+.prev, .next {
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    padding: 20px;    
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s
+}
+
+.prev {
+    left: 0.1px;
+}
+
+.next {
+    right: 0.1px;
+}
+
+/**/
+.modal {
+    display: none; /* Ẩn modal theo mặc định */
+    position: fixed; /* Đặt vị trí cố định */
+    z-index: 1; /* Đặt z-index cao để hiển thị trên các phần khác */
+    left: 0;
+    top: 0;
+    width: 100%; /* Toàn bộ chiều rộng */
+    height: 100%; /* Toàn bộ chiều cao */
+    overflow: auto; /* Kích hoạt cuộn nếu cần */
+    background-color: rgb(0,0,0); /* Màu nền */
+    background-color: rgba(0,0,0,0.4); /* Màu nền với độ trong suốt */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Đặt vị trí giữa */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Chiều rộng của modal */
+    border-radius: 10px; /* Bo góc cho modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-box i {
+    margin-right: 10px;
+    color: #888;
+}
+
+.input-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center; 
+    margin: 20px 0; 
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 3px 7px;
+    margin: 0 5px; /* Khoảng cách giữa các nút */
+    border: 1px solid #ccc; /* Đường viền màu xanh */
+    border-radius: 5px; /* Bo góc */
+    color: #686868; /* Màu chữ xanh */
+    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển tiếp */
+}
+
+.pagination a:hover {
+    background-color: #ccc; /* Màu nền khi hover */
+    color: white; /* Màu chữ trắng khi hover */
+}
+
+.pagination .active {
+    background-color: #ccc; /* Màu nền cho trang đang hoạt động */
+    color: white; /* Màu chữ trắng cho trang đang hoạt động */
+    border: 1px solid #ccc; /* Đường viền màu xanh cho trang đang hoạt động */
+    pointer-events: none; /* Không cho phép nhấn vào trang đang hoạt động */
+}
+
+tl{
+    margin-left: 28px;
+    font-size: 30px;
+}
+
+/* CSS cho phần đánh giá sản phẩm */
+.reviews-section {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-section h2 {
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.review-form {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.review-form h3 {
+    margin-bottom: 15px;
+    color: #be005f;
+}
+
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 15px;
+}
+
+.rating-select {
+    margin-bottom: 15px;
+}
+
+.rating-select select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.submit-review {
+    background-color: #be005f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-review:hover {
+    background-color: #ab0d5c;
+}
+
+.review-list {
+    margin-top: 20px;
+}
+
+.review-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.review-user {
+    font-weight: bold;
+    color: #333;
+}
+
+.review-date {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.review-rating {
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.review-content {
+    color: #555;
+    line-height: 1.5;
+}
+
+.star-rating {
+    color: #f39c12;
+    font-size: 1.2em;
+}
+
+.alert-message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.alert-success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+
+.alert-error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+
+/* Hiển thị số sao đánh giá */
+.stars-container {
+    display: inline-block;
+}
+
+.stars-container i {
+    color: #f39c12;
+    margin-right: 2px;
+}
+
+.average-rating {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.average-rating .rating-number {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #be005f;
+}
+
+.review-count {
+    color: #777;
+    margin-left: 10px;
+}

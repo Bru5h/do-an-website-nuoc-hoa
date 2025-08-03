@@ -1,0 +1,59 @@
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#contact-form {
+    width: 30vw;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact {
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.contact:focus {
+    border-color: #7b7b7b;
+    outline: none;
+}
+
+.send {
+    width: 50%;
+    background-color: #d3d3d3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.send:hover {
+    color: #be005f;
+    background-color: #efcddf;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Căn các nút sang bên phải */
+    gap: 10px; /* Khoảng cách giữa các nút */
+    margin-top: 10px; /* Khoảng cách phía trên */
+}

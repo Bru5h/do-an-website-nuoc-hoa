@@ -1,0 +1,345 @@
+/* General body styles */
+body {
+    background-color: #f7fafc;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 200px;
+    background-color: #ffffff;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar-item:hover {
+    background-color: #f7fafc;
+    color: #2d3748;
+    cursor: pointer;
+}
+
+.sidebar-item.active {
+    background-color: #edf2f7;
+    color: #2b6cb0;
+}
+
+.sidebar-item + .sidebar-item {
+    margin-top: 10px;
+}
+
+/* Header styles */
+.header {
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.search-container input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-container button {
+    background-color: #3182ce;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #2b6cb0;
+}
+
+.add-product-btn {
+    background-color: #48bb78;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.add-product-btn i {
+    margin-right: 8px;
+}
+
+.product-list {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.product-item img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.product-item .details h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.product-item .details p {
+    color: #718096;
+    font-size: 14px;
+}
+
+.product-item .actions button {
+    background-color: #2b6cb0;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    border: none;
+}
+
+.product-item .actions button:hover {
+    background-color: #2c5282;
+}
+
+.product-item .actions .delete-btn {
+    background-color: #e53e3e;
+}
+
+.product-item .actions .delete-btn:hover {
+    background-color: #c53030;
+}
+
+/* Modal styles */
+#editModal, #addModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+    z-index: 9999; /* Đảm bảo modal luôn ở trên cùng */
+    display: none; /* Ban đầu không hiển thị */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Modal container */
+.modal-content {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* Show the modal when it has the 'show' class */
+#editModal.show, #addModal.show {
+    display: flex;
+}
+
+/* Modal input fields and buttons */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="file"] {
+    padding: 5px 0;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+
+.submit, .bg-green-500 {
+    background-color: #4caf50;
+    border-radius: 4px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.submit:hover, .bg-green-500:hover {
+    background-color: #388e3c;
+}
+
+/* Avatar button */
+.avatar {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #f7fafc;
+    transition: background-color 0.2s ease;
+}
+
+/* Hiệu ứng hover cho avatar */
+.avatar:hover {
+    background-color: #e2e8f0;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; /* Mặc định ẩn dropdown */
+    position: absolute;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 10px;
+}
+
+/* Hiển thị dropdown khi có class "show" */
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Các item trong dropdown */
+.dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Image preview inside modal */
+#imagePreview img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#imagePreview p {
+    color: gray;
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
+ul{
+    padding-right: 25px;
+}
+.product-img{
+    height: 100px;
+    width: 100px;
+    margin-right: 30px;
+}
+.new-product{
+    background-color: #388e3c;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-edit, .btn-delete {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+.btn-find{
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    margin-top: 5px;
+}
+.btn-find:hover{
+    cursor: pointer;
+}
+.close{
+    border-radius: 4px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+}
+.sc-button{
+    text-align: right;
+    margin-top: 10px;
+}

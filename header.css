@@ -1,0 +1,367 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.register-login-btn {
+    background-color: #d3d3d3;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.register-login-btn:hover {
+    background-color: #be005f;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-item {
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+    color: #be005f;
+}
+li {
+    display: flex;               
+    align-items: center;        
+    justify-content: center;                     
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 200px;
+    font-size: 14px;
+}
+
+.find-btn {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 18px;
+}
+.find-btn:hover{
+    cursor: pointer;
+}
+
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.sidebar.show {
+    display: block;
+    transform: translateX(250px);
+}
+
+.sidebar-content {
+    padding-top: 60px;
+    padding-left: 20px;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-item {
+    margin-bottom: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.close {
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-box input {
+    width: 94%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-box i {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: #888;
+}
+
+.Btn-login, .Btn-register {
+    background-color: #be005f;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.Btn-login:hover, .Btn-register:hover {
+    background-color: #9b004c;
+    cursor: pointer;
+}
+
+.register-link, .login-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register-link a, .login-link a {
+    color: #be005f;
+    text-decoration: none;
+}
+
+.register-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+.menu-toggle-btn {
+    color: black; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+}
+
+.menu-toggle-btn:hover {
+    color: #9b004c;
+}
+
+.menu-toggle-icon {
+    width: 16px;
+    height: 8px;
+    fill: white;
+}
+
+#mega-menu {
+    display: flex;               
+    justify-content: center;     
+    align-items: center;        
+    height: 8vh;               
+    background-color: #ffffff;  
+    padding: 20px;              
+    box-sizing: border-box;     
+}
+
+/* Modal - ẩn khi chưa mở */
+.modal-userinformation {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+    z-index: 1000; /* Đảm bảo modal ở trên cùng */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Khi mở modal */
+.modal-userinformation.show {
+    display: flex; /* Hiển thị modal */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%; /* Đảm bảo không quá rộng */
+}
+
+.close {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Dropdown menu */
+#user-dropdown {
+    display: none; /* Ẩn menu khi chưa mở */
+    position: absolute;
+    top: 50px; /* Điều chỉnh vị trí của menu */
+    right: 0; /* Điều chỉnh để menu hiển thị ngay dưới biểu tượng */
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+/* Thêm style cho thông tin người dùng trong dropdown */
+#user-dropdown > div {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#user-dropdown > div span:first-child {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+#user-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#user-dropdown ul li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+#user-dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+#user-dropdown ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+#user-dropdown ul li a:hover {
+    color: #007bff;
+}
+.danh-muc {
+    color: black; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+}
+
+.danh-muc:hover {
+    color: #9b004c;
+}
+
+#user-menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+#user-menu-button:hover {
+    color: #9b004c;
+}
